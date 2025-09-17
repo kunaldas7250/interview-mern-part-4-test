@@ -1,0 +1,51 @@
+/* Main container */
+.MainPage {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navcomponent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;  
+  padding: 10px 20px;
+}
+
+/* Left side (name) */
+.navcomponent p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Right side (links) */
+.navcomponent ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each item */
+.navcomponent li {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Anchor tags (external links) */
+.navcomponent a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effects */
+.navcomponent li:hover,
+.navcomponent a:hover {
+  color: #1e90ff; 
+}
