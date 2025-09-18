@@ -1,23 +1,24 @@
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import "../css/Prdoct.css"
 const Product = () => {
   const [productdata, setproductdata] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    const fetch = async () => {
+    const fetchProducts = async () => {
       try {
-        const responce = await axios.get(`https://dummyjson.com/products`);
-        setproductdata(responce.data.products); 
-        console.log(responce.data.products);
+        const response = await fetch(`https://dummyjson.com/products`);
+        const data = await response.json();
+        setproductdata(data.products); 
       } catch (error) {
-        console.error(`something went wrong ${error}`);
+        console.error("Error fetching products:", error);
       }
     };
-    fetch();
-  }, []); 
+
+    fetchProducts();
+  }, []);
 
   const handleitem = (item) => {
     setSelectedProduct(item); 

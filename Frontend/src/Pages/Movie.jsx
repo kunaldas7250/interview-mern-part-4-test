@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 
 const Movie = () => {
@@ -8,12 +8,13 @@ const Movie = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        // API gives only ONE random movie
-        const response = await axios.get(`https://jsonfakery.com/movies/random`);
-        console.log(response.data);
+        
+        const response = await fetch(`https://jsonfakery.com/movies/random`);
+        const data=await response.json()
 
-        // Store as array so we can map
-        setmoviedata([response.data]);
+        console.log(data);
+
+        setmoviedata([data]);
       } catch (error) {
         console.error(`something went wrong: ${error}`);
       }

@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from "react";
 
 const Tode = () => {
@@ -24,7 +23,6 @@ const Tode = () => {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(formdata));
   }, [formdata]);
-
   const handlesubmit = (e) => {
     e.preventDefault();
 
